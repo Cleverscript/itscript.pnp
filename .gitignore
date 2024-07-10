@@ -1,0 +1,10 @@
+.git
+.idea
+.vscode
+.last_version/.vscode
+*.txt
+*.zip
+*.tar.gz
+*.pdf
+*.jpg
+.last_version/logs/*

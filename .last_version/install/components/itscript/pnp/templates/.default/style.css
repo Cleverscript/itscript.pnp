@@ -1,0 +1,25 @@
+.pnp-cmp-over{
+    padding:15px;
+}
+.pnp-form-fields{}
+.pnp-form-fields textarea{display:block; width:99.8%; height:150px; padding:0;}
+.result-cont{
+    width: 100%;
+    background: #000;
+    overflow-y: auto;
+}
+.result-cont-inner{
+    height: 350px;
+    padding: 10px;
+    color:lightgray;
+}
+.result-cont-inner .event{
+    color: rgb(82, 164, 0);
+}
+.result-cont-inner .method{
+    color:rgb(49, 49, 222);
+}
+.result-cont-inner b{font-weight: normal;}
+.result-cont-inner em{
+    color: chocolate;
+}
