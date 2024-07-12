@@ -1,9 +1,9 @@
 <div class="pnp-cmp-over">
     <div class="pnp-form-fields">
         <p>
-            <button id="addShared-btn-js" type="button">AddShared</button>
-            <button id="addQueue-btn-js" type="button">AddQueue</button>
             <button id="addBuyUser-btn-js" type="button">AddByUser</button>
+            <button id="addQueue-btn-js" type="button">AddQueue</button>
+            <button id="addShared-btn-js" type="button">AddShared (only mobile)</button>
         </p>
         <p>
         <textarea name="PNP_PARAMS" id="pnp-params-js">{
