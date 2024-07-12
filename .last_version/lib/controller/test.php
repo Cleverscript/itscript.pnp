@@ -6,6 +6,9 @@ use Bitrix\Main\Loader;
 use Bitrix\Main\Localization\Loc;
 use Bitrix\Main\Engine\Controller;
 use Bitrix\Main\Engine\ActionFilter;
+use Bitrix\Main\Engine\ActionFilter\Csrf;
+use Bitrix\Main\Engine\ActionFilter\Authentication;
+use Bitrix\Main\Engine\ActionFilter\HttpMethod;
 use Bitrix\Main\Engine\CurrentUser;
 use Itscript\Pnp\Util;
 use Itscript\Pnp\Service\PushAndPullShema;
@@ -16,7 +19,29 @@ class Test extends Controller
 {
     public function configureActions(): array
     {
-        return [];
+        return [
+            'shared' => [
+                'prefilters' => [
+                    new Csrf(),
+                    new HttpMethod([HttpMethod::METHOD_POST]),
+                    new Authentication(),
+                ],
+            ],
+            'addbyuser' => [
+                'prefilters' => [
+                    new Csrf(),
+                    new HttpMethod([HttpMethod::METHOD_POST]),
+                    new Authentication(),
+                ],
+            ],
+            'queue' => [
+                'prefilters' => [
+                    new Csrf(),
+                    new HttpMethod([HttpMethod::METHOD_POST]),
+                    new Authentication(),
+                ],
+            ],
+        ];
     }
 
 	public function sharedAction(string $mid, string $cmd, ?string $params): bool
@@ -34,9 +59,4 @@ class Test extends Controller
     {
         return PushAndPullShema::addQueue($mid, $uid, $mess, $tag, $subTag);
     }
-
-	public function viewAction(int $id): ?array
-    {
-		return [];
-	}
 }
