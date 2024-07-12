@@ -43,6 +43,7 @@
 
 
 
-![Иллюстрация к проекту](https://github.com/Cleverscript/itscript.pnp/raw/main/prev-1.png)
-![Иллюстрация к проекту](https://github.com/Cleverscript/itscript.pnp/raw/main/prev-2.png)
 ![Иллюстрация к проекту](https://github.com/Cleverscript/itscript.pnp/raw/main/prev-3.png)
+![Иллюстрация к проекту](https://github.com/Cleverscript/itscript.pnp/raw/main/prev-2.png)
+![Иллюстрация к проекту](https://github.com/Cleverscript/itscript.pnp/raw/main/prev-1.png)
+
