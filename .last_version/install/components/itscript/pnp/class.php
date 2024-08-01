@@ -25,33 +25,29 @@ class PushAndPull extends CBitrixComponent
 
     public function getTemplateNameDefault()
 	{
-
-		if ($name = $this->getTemplateName())
+		if ($name = $this->getTemplateName()) {
 			return $name;
-		else
-			return '.default';
+        } 
+
+        return '.default';
 	}
 
 	public function executeComponent() 
     {
-        // add assets
         try {
             Asset::getInstance()->addCss($this->GetPath() . '/templates/' . $this->getTemplateNameDefault() . '/style.css');
             Asset::getInstance()->addJs($this->GetPath().'/templates/'. $this->getTemplateNameDefault() . '/js/script.js');
             Extension::load('pull.client');
-        } catch (\Throwable $e) {
-            print $e->getMessage();
-        }
 
-		if ($this->startResultCache(false, array(($this->arParams["CACHE_GROUPS"]==="N"? false: \Bitrix\Main\Engine\CurrentUser::get()->getUserGroups())))) {
-	        
-            //Util::debug($this->GetPath().'/templates/'. $this->getTemplateNameDefault() . '/js/script.js');
+            if ($this->startResultCache(false, [($this->arParams["CACHE_GROUPS"]==="N"? false: CurrentUser::get()->getUserGroups())])) {
+
+            }
 
             // Include template
             $this->includeComponentTemplate();
-
-	    } else {
-            $this->abortResultCache();
+            
+        } catch (\Throwable $e) {
+            print $e->getMessage();
         }
 	}
 }
