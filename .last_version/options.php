@@ -50,7 +50,7 @@ $aTabs = [
 //Save form
 if ($request->isPost() && $request["save"] && check_bitrix_sessid()) {
     foreach ($aTabs as $aTab) {
-        if (count($aTab['OPTIONS'])) {
+        if (!empty($aTab['OPTIONS'])) {
             __AdmSettingsSaveOptions($module_id, $aTab["OPTIONS"]);
         }
     }
