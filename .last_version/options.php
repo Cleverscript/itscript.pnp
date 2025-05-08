@@ -6,7 +6,7 @@ use Bitrix\Main\HttpApplication;
 use Bitrix\Main\Config\Option;
 use Itscript\PushAndPull\Util;
 
-$module_id = "itscript.push_and_pull";
+$module_id = "itscript.pnp";
 
 IncludeModuleLangFile($_SERVER['DOCUMENT_ROOT'].'/bitrix/modules/main/options.php');
 IncludeModuleLangFile(__FILE__);
@@ -39,7 +39,7 @@ $aTabs = [
     $arMainPropsTab,
 
     [
-        "DIV" => "edit5",
+        "DIV" => "edit2",
         "TAB" => Loc::getMessage("MAIN_TAB_RIGHTS"),
         "TITLE" => Loc::getMessage("MAIN_TAB_TITLE_RIGHTS")
     ],
